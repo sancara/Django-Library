@@ -9,5 +9,11 @@
     <h1>HOMEPAGE</h1>
     <p>Total Books: {{num_books}}</p>
     <p>Num Available: {{num_instances_avail}}</p>
+    {% if user.is_authenticated %}
+    <p>you're logged in</p>
+    <p>Welcome {{user.get_username}}</p>
+    {% else %}
+    <p>You're not logged in</p>
+    {% endif %}
   </body>
 </html>
